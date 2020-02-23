@@ -1,0 +1,40 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  liu35
+* Top Cell Name: addhalf
+* View Name:     schematic
+* Netlisted on:  Apr 19 00:06:12 2019
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: liu35
+* Cell Name:    addhalf
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT addhalf A B C S VDD VSS
+*.PININFO A:I B:I VDD:I C:O S:O VSS:O
+MPM6 C net16 VDD VDD NP W=1.1u L=550n m=1
+MPM5 S net41 VDD VDD NP W=1.1u L=550n m=1
+MPM7 net41 net16 VDD VDD NP W=1.1u L=550n m=1
+MPM3 net41 B net42 net42 NP W=1.1u L=550n m=1
+MPM2 net42 A VDD VDD NP W=1.1u L=550n m=1
+MPM1 net16 B VDD VDD NP W=1.1u L=550n m=1
+MPM0 net16 A VDD VDD NP W=1.1u L=550n m=1
+MNM7 C net16 VSS VSS NN W=800n L=500n m=1
+MNM5 S net41 VSS VSS NN W=800n L=500n m=1
+MNM4 net35 A VSS VSS NN W=800n L=500n m=1
+MNM3 net35 B VSS VSS NN W=800n L=500n m=1
+MNM2 net41 net16 net35 net35 NN W=800n L=500n m=1
+MNM1 net31 B VSS VSS NN W=800n L=500n m=1
+MNM0 net16 A net31 net31 NN W=800n L=500n m=1
+.ENDS
+
